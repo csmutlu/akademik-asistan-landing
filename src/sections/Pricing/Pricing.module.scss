@@ -1,0 +1,128 @@
+@use '../../styles/mixins' as *;
+
+.toggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin: 0 auto 2.5rem;
+  padding: 0.25rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: var(--radius-pill);
+    transition:
+      color var(--dur-fast) var(--ease-out),
+      background var(--dur-fast) var(--ease-out);
+  }
+}
+
+.active {
+  color: var(--text) !important;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.save {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+
+  @include lg-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+}
+
+.name {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0.9rem 0 1.25rem;
+  min-height: 2.6rem;
+}
+
+.amount {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.unit {
+  font-size: 0.9rem;
+  color: var(--text-subtle);
+}
+
+.custom {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem 0 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.93rem;
+    color: var(--text-muted);
+
+    svg {
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      color: var(--success);
+    }
+  }
+}
