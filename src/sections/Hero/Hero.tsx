@@ -63,8 +63,8 @@ export function Hero() {
             </span>
             <img
               src={urunPaneli}
-              width={1400}
-              height={518}
+              width={1006}
+              height={586}
               alt="Akademik Asistan öğrenci web paneli ve mobil panel ekran görüntüsü"
               className={styles.shot}
             />
