@@ -54,3 +54,11 @@
   site haritası, `color-scheme` ipucu, canonical bağlantı.
 - Lighthouse (masaüstü): **Performans 100 · Erişilebilirlik 100 · En iyi
   uygulamalar 100 · SEO 100**. Rapor görüntüsü `docs/lighthouse.png`.
+
+## Belgeleme ve dağıtım
+
+- README (kurulum, komutlar, mimari notlar, erişilebilirlik, performans,
+  dağıtım), `docs/adr-0001..0005`, CHANGELOG ve ilerleme notları.
+- GitHub Pages dağıtım iş akışı; Vercel/Netlify yapılandırmaları; MIT lisansı.
+- Dal akışı: `main` korumalı (PR + CI zorunlu), geliştirme `dev`, özellikler
+  `feat/*`; her aşama PR ile birleştirildi, sürüm `dev → main` PR'ı ile yapılır.
