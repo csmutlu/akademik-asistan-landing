@@ -19,3 +19,4 @@ Biçim [Keep a Changelog](https://keepachangelog.com/tr/1.1.0/) temel alınarak 
 ### Değiştirildi
 
 - Hero görseli, CSS önizleme yerine **gerçek ürün ekran görüntüleriyle** değiştirildi: tarayıcı çerçevesinde öğrenci web paneli + sağ altta mobil uygulama (web + mobil kompozisyon). Her iki temada uyumlu; Lighthouse performansı 100, CLS 0 korundu.
+- Logo, **marka amblemiyle** (mezuniyet kepi + sohbet balonu + açık kitap) güncellendi; temaya uyumlu vektör (açıkta lacivert, koyuda beyaz; kitap mavi).
