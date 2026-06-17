@@ -13,3 +13,18 @@
 - Duyarlı başlık (mobil menü, Esc ile kapatma) ve alt bilgi; "İçeriğe geç"
   atlama bağlantısı.
 - GitHub Actions CI (lint, biçim, tip kontrolü, test, derleme).
+
+## Gün 2 — UI bileşen kütüphanesi
+
+- Sıfırdan, harici UI kütüphanesi olmadan 5 bileşen; her biri ayrı klasör,
+  `.module.scss` ve props ile yapılandırılabilir:
+  - **Button** — primary/secondary/ghost varyant, sm/md/lg boyut, loading,
+    `href` ile bağlantı modu.
+  - **Input** — etiket + ipucu + hata; `aria-invalid` / `aria-describedby`;
+    çok satırlı (textarea) ve seçim (select) varyantları.
+  - **Card** — `as` ile polimorfik, etkileşimli ve vurgulu varyantlar.
+  - **Modal** — portal, `role="dialog"` + `aria-modal`, odak tuzağı, Esc ve
+    arka plana tıklayarak kapatma, kaydırma kilidi, odağı geri verme.
+  - **Accordion** — `aria-expanded`/`aria-controls`, ok/Home/End ile klavye
+    gezinmesi, tek veya çoklu açılım.
+- Vitest + Testing Library ile 20 test (davranış + erişilebilirlik).
