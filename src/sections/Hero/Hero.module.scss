@@ -95,8 +95,35 @@
 
 .visual {
   position: relative;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
+}
+
+.frame {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.bar {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+.shot {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .demoList {
