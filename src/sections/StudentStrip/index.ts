@@ -1,0 +1,1 @@
+export { StudentStrip } from './StudentStrip'
