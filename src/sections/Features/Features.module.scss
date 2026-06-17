@@ -1,0 +1,43 @@
+@use '../../styles/mixins' as *;
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+
+  @include md-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: var(--radius-md);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+}
