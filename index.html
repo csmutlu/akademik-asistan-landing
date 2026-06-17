@@ -1,10 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>akademik-asistan-landing</title>
+    <meta
+      name="description"
+      content="Akademik Asistan — üniversiteler için çok kiracılı kurumsal akademik yönetim platformu. OBS ve LMS arasındaki operasyonel boşluğu tek platformda kapatın."
+    />
+    <title>Akademik Asistan — Kurumsal Akademik Yönetim Platformu</title>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://tanitim.akademikasistan.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tanitim.akademikasistan.com/" />
+    <meta
+      property="og:title"
+      content="Akademik Asistan — Kurumsal Akademik Yönetim Platformu"
+    />
+    <meta
+      property="og:description"
+      content="Üniversiteler için çok kiracılı SaaS akademik yönetim platformu. OBS ile LMS arasındaki operasyonel boşluğu tek platformda kapatın."
+    />
+    <meta
+      property="og:image"
+      content="https://tanitim.akademikasistan.com/og.png"
+    />
+    <meta property="og:locale" content="tr_TR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0a0e1a"
+    />
+    <script>
+      // Boyama öncesi tema — ilk boyamadan önce çalışır, FOUC'u önler.
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('aa-theme')
+          var theme =
+            saved ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light')
+          document.documentElement.dataset.theme = theme
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

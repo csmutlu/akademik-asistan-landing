@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tanitim.akademikasistan.com/sitemap.xml

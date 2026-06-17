@@ -1,0 +1,148 @@
+@use '../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: saturate(1.5) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+}
+
+.nav {
+  display: none;
+  margin-inline-start: auto;
+
+  @include lg-up {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    color: var(--text);
+    background: var(--surface-2);
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-inline-start: auto;
+
+  @include lg-up {
+    margin-inline-start: 0.5rem;
+  }
+}
+
+.cta {
+  display: none;
+  align-items: center;
+  padding: 0.62rem 1.05rem;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  border-radius: var(--radius-md);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--accent-hover);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  @include lg-up {
+    display: inline-flex;
+  }
+}
+
+.menuBtn {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  @include lg-up {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+
+  @include lg-up {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.6rem 1.15rem 1.15rem;
+    margin: 0;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    padding: 0.72rem 0.55rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+
+    &:hover {
+      color: var(--text);
+      background: var(--surface-2);
+    }
+  }
+}
+
+.mobileCta {
+  margin-top: 0.5rem;
+  font-weight: 600 !important;
+  color: var(--accent-contrast) !important;
+  text-align: center;
+  background: var(--accent);
+}
