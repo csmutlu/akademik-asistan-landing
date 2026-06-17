@@ -42,3 +42,15 @@
   başarılı gönderimde onay modalı (yalancı submit).
 - Tüm metin Türkçe ve `src/lib/content.ts` içinde toplandı. Test sayısı 25'e
   çıktı. Derleme: ~70 kB gz JS, ~5,6 kB gz CSS.
+
+## Gün 4 — Erişilebilirlik, performans ve Lighthouse
+
+- Erişilebilirlik baştan tasarıma işlendi: semantik landmark'lar, atlama
+  bağlantısı, `label-for`, accordion/modal aria nitelikleri, görünür odak
+  halkaları, AA kontrast, tam klavye gezinmesi, `prefers-reduced-motion`.
+- Performans: ürün önizlemesi görsel yerine CSS ile çizildi (sıfır görsel
+  yükü); sistem font yığını (web font yükü yok); yalın JS/CSS.
+- SEO / sosyal: Open Graph + Twitter kart meta'ları ve görseli, `robots.txt`,
+  site haritası, `color-scheme` ipucu, canonical bağlantı.
+- Lighthouse (masaüstü): **Performans 100 · Erişilebilirlik 100 · En iyi
+  uygulamalar 100 · SEO 100**. Rapor görüntüsü `docs/lighthouse.png`.
