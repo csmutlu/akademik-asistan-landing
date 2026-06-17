@@ -18,4 +18,4 @@ Biçim [Keep a Changelog](https://keepachangelog.com/tr/1.1.0/) temel alınarak 
 
 ### Değiştirildi
 
-- Hero görseli, CSS önizleme yerine **gerçek ürün ekran görüntüsüyle** (öğrenci web paneli) değiştirildi; koyu temada okunabilirlik ve beyaz arka plan sorunu için yalnızca koyu panele kırpıldı (~34 kB webp). Lighthouse performansı 100 korundu.
+- Hero görseli, CSS önizleme yerine **gerçek öğrenci web paneli ekran görüntüsüyle** (tarayıcı çerçevesi içinde) değiştirildi; koyu, okunaklı, her iki temada uyumlu (~62 kB webp). Lighthouse performansı 100 korundu.
