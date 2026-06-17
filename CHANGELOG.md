@@ -15,3 +15,7 @@ Biçim [Keep a Changelog](https://keepachangelog.com/tr/1.1.0/) temel alınarak 
 - Landing bölümleri (B2B/kurumsal, Türkçe): Hero (ürün önizleme + demo modalı), Sorun→Çözüm, Özellikler, Öğrenci deneyimi şeridi, Roller, Fiyatlandırma (dönem değiştirici), SSS (Accordion), demo talep formu (doğrulama + başarı modalı).
 - Open Graph / sosyal kart meta'ları ve görseli, `robots.txt` + site haritası, `color-scheme` ipucu. Lighthouse (masaüstü): performans, erişilebilirlik, en iyi uygulamalar ve SEO 100/100.
 - README, mimari karar kayıtları (`docs/adr-0001..0005`), GitHub Pages dağıtım iş akışı, Vercel/Netlify yapılandırmaları ve MIT lisansı.
+
+### Değiştirildi
+
+- Hero görseli, CSS önizleme yerine **gerçek ürün ekran görüntüsüyle** (öğrenci web paneli + mobil panel) değiştirildi; ~35 kB webp, Lighthouse performansı 100 korundu.
