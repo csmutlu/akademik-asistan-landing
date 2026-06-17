@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button } from '../../components/Button'
 import { Modal } from '../../components/Modal'
 import { Icon } from '../../components/Icon'
-import { DashboardMock } from '../../components/DashboardMock'
+import urunPaneli from '../../assets/urun-paneli.webp'
 import styles from './Hero.module.scss'
 
 export function Hero() {
@@ -55,7 +55,20 @@ export function Hero() {
         </div>
 
         <div className={styles.visual}>
-          <DashboardMock />
+          <div className={styles.frame}>
+            <span className={styles.bar} aria-hidden="true">
+              <span className={styles.dot} />
+              <span className={styles.dot} />
+              <span className={styles.dot} />
+            </span>
+            <img
+              src={urunPaneli}
+              width={1400}
+              height={518}
+              alt="Akademik Asistan öğrenci web paneli ve mobil panel ekran görüntüsü"
+              className={styles.shot}
+            />
+          </div>
         </div>
       </div>
 
