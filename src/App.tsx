@@ -1,8 +1,16 @@
+import { Header } from './sections/Header'
+import { Footer } from './sections/Footer'
+
 function App() {
   return (
-    <main>
-      <h1>Akademik Asistan</h1>
-    </main>
+    <>
+      <a className="skip-link" href="#main">
+        İçeriğe geç
+      </a>
+      <Header />
+      <main id="main">{/* Bölümler Gün 3'te eklenecek */}</main>
+      <Footer />
+    </>
   )
 }
 

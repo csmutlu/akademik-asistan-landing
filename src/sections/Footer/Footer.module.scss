@@ -1,0 +1,74 @@
+@use '../../styles/mixins' as *;
+
+.footer {
+  margin-top: 6rem;
+  padding-block: 3.5rem 2rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.inner {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+
+  @include md-up {
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 22rem;
+}
+
+.tagline {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+
+.col {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  a {
+    font-size: 0.94rem;
+    color: var(--text-muted);
+    transition: color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.colTitle {
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.86rem;
+  color: var(--text-subtle);
+}
