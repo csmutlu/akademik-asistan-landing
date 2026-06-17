@@ -3,6 +3,7 @@ import { Button } from '../../components/Button'
 import { Modal } from '../../components/Modal'
 import { Icon } from '../../components/Icon'
 import urunPaneli from '../../assets/urun-paneli.webp'
+import urunMobil from '../../assets/urun-mobil.webp'
 import styles from './Hero.module.scss'
 
 export function Hero() {
@@ -69,6 +70,13 @@ export function Hero() {
               className={styles.shot}
             />
           </div>
+          <img
+            src={urunMobil}
+            width={440}
+            height={956}
+            alt="Akademik Asistan mobil uygulama ekran görüntüsü"
+            className={styles.phone}
+          />
         </div>
       </div>
 
