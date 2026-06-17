@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# Akademik Asistan — Kurumsal Tanıtım Sayfası
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![CI](https://github.com/csmutlu/akademik-asistan-landing/actions/workflows/ci.yml/badge.svg)](https://github.com/csmutlu/akademik-asistan-landing/actions/workflows/ci.yml)
 
-Currently, two official plugins are available:
+**Akademik Asistan**, üniversitelere SaaS modeliyle sunulan **çok kiracılı (multi-tenant) kurumsal akademik yönetim platformudur.** Bu repo, ürünün tek sayfalık **tanıtım (landing) sayfasını** ve sayfada kullanılan **sıfırdan yazılmış UI bileşen kütüphanesini** içerir.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Sayfa; OBS ile LMS arasındaki operasyonel boşluğu (QR yoklama, ödev, doküman, duyuru, yemekhane, bildirim) tek platformda kapatma değer önermesini kurumsal karar vericilere anlatır.
 
-## React Compiler
+- **Canlı demo:** https://csmutlu.github.io/akademik-asistan-landing/ _(özel alan adı `tanitim.akademikasistan.com` DNS yönlendirmesiyle etkinleştirilebilir — bkz. Dağıtım)_
+- **Stack:** Vite + React + TypeScript + SCSS — harici UI kütüphanesi yok.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Ekran görüntüleri
 
-## Expanding the ESLint configuration
+| Açık tema                                        | Koyu tema                                       |
+| ------------------------------------------------ | ----------------------------------------------- |
+| ![Açık tema](docs/screenshots/desktop-light.png) | ![Koyu tema](docs/screenshots/desktop-dark.png) |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<details>
+<summary>Mobil görünüm</summary>
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Mobil](docs/screenshots/mobile.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+</details>
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Öne çıkanlar
+
+- **Bileşen kütüphanesi (harici UI yok):** `Button`, `Input`, `Card`, `Modal`, `Accordion` — her biri ayrı klasör, `.module.scss` ve props ile yapılandırılabilir.
+- **Tema:** CSS değişkenleriyle açık/koyu; başlangıç değeri sistem tercihi veya kalıcı seçim, FOUC önleyici boyama-öncesi script.
+- **Duyarlı:** mobil öncelikli; üç kırılım (≤640 · 641–1024 · ≥1025).
+- **Erişilebilirlik:** semantik HTML, atlama bağlantısı, `label-for`, aria nitelikleri, klavye gezinmesi (modal odak tuzağı, accordion ok tuşları), görünür odak halkaları, `prefers-reduced-motion`.
+- **Performans:** ürün önizlemesi CSS ile çizildi (görsel yükü yok), sistem font yığını, yalın JS/CSS.
+- **Lighthouse (masaüstü): 100 / 100 / 100 / 100** — bkz. `docs/lighthouse.png`.
+
+## Kurulum
+
+Gereksinim: Node.js 20.19+ veya 22.12+.
+
+```bash
+npm install      # bağımlılıklar
+npm run dev      # geliştirme sunucusu (http://localhost:5173)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Komutlar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Komut                | Açıklama                                      |
+| -------------------- | --------------------------------------------- |
+| `npm run dev`        | Geliştirme sunucusu (HMR)                     |
+| `npm run build`      | Tip kontrolü + production derlemesi (`dist/`) |
+| `npm run preview`    | Derlemeyi yerelde önizle                      |
+| `npm run lint`       | ESLint (jsx-a11y dahil)                       |
+| `npm run format`     | Prettier ile biçimlendir                      |
+| `npm run typecheck`  | TypeScript tip kontrolü                       |
+| `npm run test`       | Vitest (tek seferlik)                         |
+| `npm run test:watch` | Vitest (izleme)                               |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Proje yapısı
+
 ```
+src/
+  components/   # 5 UI bileşeni + ThemeToggle, Icon, Section, DashboardMock
+  sections/     # Header, Hero, Problem, Features, StudentStrip, Roles,
+                # Pricing, Faq, Contact, Footer
+  hooks/        # useTheme, useScrollLock, useFocusTrap
+  lib/          # content.ts (TR içerik), validators.ts (form doğrulama)
+  styles/       # _tokens.scss, _mixins.scss, global.scss
+docs/           # ADR'ler, ilerleme notları, ekran görüntüleri, Lighthouse
+```
+
+## Mimari notlar ve kararlar
+
+Önemli kararlar `docs/adr-*.md` altında kayıt altındadır:
+
+- [ADR-0001](docs/adr-0001-react-vite-typescript.md) — React + Vite + TypeScript
+- [ADR-0002](docs/adr-0002-scss-modules-tema.md) — SCSS Modules + CSS değişkenli tema
+- [ADR-0003](docs/adr-0003-kendi-bilesen-kutuphanesi.md) — Kendi bileşen kütüphanesi
+- [ADR-0004](docs/adr-0004-erisilebilirlik.md) — Erişilebilirlik yaklaşımı
+- [ADR-0005](docs/adr-0005-performans.md) — Performans: CSS önizleme ve sistem fontları
+
+Kısa özet:
+
+- **Tema** tek kaynaktan (`_tokens.scss`) CSS değişkenleriyle yönetilir; bileşenler renkleri doğrudan değişkenlerden okur, böylece açık/koyu otomatik çalışır.
+- **Bileşenler** birleştirilebilir ve sunum/iş mantığı ayrıdır; durum (tema, modal, form) yerel ve öngörülebilir tutulur.
+- **İçerik** `src/lib/content.ts` içinde toplanır; bölümler veriyi map'leyerek render eder.
+
+## Erişilebilirlik
+
+- Tek `h1`, ardından bölüm başlıkları (`h2`/`h3`) ile mantıklı başlık hiyerarşisi.
+- Tüm form alanları `label`–`for` ile bağlı; hatalar `aria-invalid` + `aria-describedby` ile duyurulur.
+- Modal: `role="dialog"`, `aria-modal`, odak tuzağı, Esc ile kapatma, odağı geri verme.
+- Accordion: `aria-expanded`/`aria-controls`, ok/Home/End ile klavye gezinmesi.
+- `prefers-reduced-motion` ve `:focus-visible` desteklenir.
+
+## Performans
+
+Lighthouse masaüstü ölçümünde dört kategoride de 100. Ürün görseli yerine CSS ile çizilen önizleme, sistem font yığını ve yalın paket sayesinde görsel/font ağ yükü minimumdur (`docs/lighthouse.png`).
+
+## Dağıtım
+
+- **GitHub Pages:** `main`'e her push'ta `.github/workflows/deploy.yml` derleyip yayımlar.
+- **Özel alan adı (opsiyonel):** `tanitim.akademikasistan.com` için (1) `public/CNAME` dosyasına alan adını yazın, (2) alan adı sağlayıcısında bir **CNAME kaydı** ekleyin: `tanitim` → `csmutlu.github.io`. Repo Ayarlar → Pages'te kaynak **GitHub Actions** olmalıdır.
+- **Alternatif:** depo Vercel veya Netlify'a bağlanabilir (`vercel.json` / `netlify.toml` hazır).
+
+## Katkı / dal akışı
+
+`main` korumalıdır (PR + CI zorunlu). Geliştirme `dev` dalında; özellikler `feat/*`, düzeltmeler `fix/*` dallarında yapılır ve PR ile `dev`'e birleştirilir. Commit mesajları [Conventional Commits](https://www.conventionalcommits.org/) biçimindedir.
+
+## Lisans
+
+[MIT](LICENSE)
