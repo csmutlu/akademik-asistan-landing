@@ -9,6 +9,32 @@
       content="Akademik Asistan — üniversiteler için çok kiracılı kurumsal akademik yönetim platformu. OBS ve LMS arasındaki operasyonel boşluğu tek platformda kapatın."
     />
     <title>Akademik Asistan — Kurumsal Akademik Yönetim Platformu</title>
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0a0e1a"
+    />
+    <script>
+      // Boyama öncesi tema — ilk boyamadan önce çalışır, FOUC'u önler.
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('aa-theme')
+          var theme =
+            saved ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light')
+          document.documentElement.dataset.theme = theme
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
