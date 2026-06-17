@@ -28,3 +28,17 @@
   - **Accordion** — `aria-expanded`/`aria-controls`, ok/Home/End ile klavye
     gezinmesi, tek veya çoklu açılım.
 - Vitest + Testing Library ile 20 test (davranış + erişilebilirlik).
+
+## Gün 3 — Landing bölümleri ve içerik
+
+- Ürün konumlandırması: tüketici uygulaması değil, üniversitelere SaaS olarak
+  sunulan çok kiracılı kurumsal akademik yönetim platformu (B2B). İçerik gerçek
+  ürün bilgisi ve ürün brief'i temel alınarak yazıldı.
+- Bölümler: Hero (dekoratif ürün önizleme + "Hızlı bakış" modalı), Sorun→Çözüm
+  (OBS/LMS boşluğu), Özellikler (6 kart), Öğrenci deneyimi şeridi, Roller (5
+  rol), Fiyatlandırma (kurumsal planlar + aylık/yıllık değiştirici), SSS
+  (Accordion), İletişim (kurumsal demo talep formu).
+- Form doğrulama: e-posta formatı ve boş alan kontrolleri, satır içi uyarılar;
+  başarılı gönderimde onay modalı (yalancı submit).
+- Tüm metin Türkçe ve `src/lib/content.ts` içinde toplandı. Test sayısı 25'e
+  çıktı. Derleme: ~70 kB gz JS, ~5,6 kB gz CSS.
