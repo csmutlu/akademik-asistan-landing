@@ -6,7 +6,11 @@
 
 .mark {
   flex-shrink: 0;
-  color: var(--accent);
+  color: var(--text);
+}
+
+.book {
+  fill: var(--accent);
 }
 
 .word {
