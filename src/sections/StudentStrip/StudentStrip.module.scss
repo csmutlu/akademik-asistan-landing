@@ -1,0 +1,55 @@
+@use '../../styles/mixins' as *;
+
+.strip {
+  padding-block: 3rem;
+}
+
+.inner {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+  padding: 2.25rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+
+  @include lg-up {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2.5rem;
+    padding: 2.75rem;
+  }
+}
+
+.title {
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+}
+
+.text {
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+}
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+  }
+}

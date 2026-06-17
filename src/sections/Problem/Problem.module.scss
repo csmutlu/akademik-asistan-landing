@@ -1,0 +1,57 @@
+@use '../../styles/mixins' as *;
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+
+  @include lg-up {
+    grid-template-columns: 1fr auto 1fr;
+  }
+}
+
+.col {
+  height: 100%;
+}
+
+.colTitle {
+  margin-bottom: 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.96rem;
+    color: var(--text-muted);
+  }
+}
+
+.bad svg {
+  color: var(--text-subtle);
+}
+
+.good svg {
+  color: var(--success);
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  rotate: 90deg;
+
+  @include lg-up {
+    rotate: none;
+  }
+}
