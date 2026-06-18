@@ -19,4 +19,16 @@ describe('App', () => {
       screen.getByRole('link', { name: 'İçeriğe geç' }),
     ).toBeInTheDocument()
   })
+
+  it('canlı demo CTA ana ürüne link verir', () => {
+    render(<App />)
+
+    expect(screen.getByRole('link', { name: 'Canlı demo' })).toHaveAttribute(
+      'href',
+      'https://akademikasistan.com/',
+    )
+    expect(
+      screen.queryByRole('button', { name: 'Hızlı bakış' }),
+    ).not.toBeInTheDocument()
+  })
 })

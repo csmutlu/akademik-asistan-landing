@@ -1,14 +1,10 @@
-import { useState } from 'react'
 import { Button } from '../../components/Button'
-import { Modal } from '../../components/Modal'
 import { Icon } from '../../components/Icon'
 import urunPaneli from '../../assets/urun-paneli.webp'
 import urunMobil from '../../assets/urun-mobil.webp'
 import styles from './Hero.module.scss'
 
 export function Hero() {
-  const [demoOpen, setDemoOpen] = useState(false)
-
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.inner}`}>
@@ -34,11 +30,11 @@ export function Hero() {
               Demo talep et
             </Button>
             <Button
+              href="https://akademikasistan.com/"
               variant="secondary"
               size="lg"
-              onClick={() => setDemoOpen(true)}
             >
-              Hızlı bakış
+              Canlı demo
             </Button>
           </div>
 
@@ -79,28 +75,6 @@ export function Hero() {
           />
         </div>
       </div>
-
-      <Modal
-        open={demoOpen}
-        onClose={() => setDemoOpen(false)}
-        title="Hızlı bakış"
-      >
-        <p>
-          Demoda, bir üniversitenin günlük akademik operasyonunu tek panelden
-          nasıl yönettiğini görürsünüz:
-        </p>
-        <ul className={styles.demoList}>
-          <li>Rol bazlı paneller: öğrenci, akademisyen, yönetici</li>
-          <li>QR yoklama ve ders bazlı ödev / doküman akışı</li>
-          <li>Duyuru, yemekhane ve anlık bildirim yönetimi</li>
-          <li>Çok kiracılı yapı ve kuruma özel marka kimliği</li>
-        </ul>
-        <div className={styles.demoCta}>
-          <Button href="#iletisim" onClick={() => setDemoOpen(false)} fullWidth>
-            Kurumunuz için demo talep edin
-          </Button>
-        </div>
-      </Modal>
     </section>
   )
 }
