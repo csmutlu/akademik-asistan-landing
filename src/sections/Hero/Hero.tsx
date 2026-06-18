@@ -20,9 +20,10 @@ export function Hero() {
           </h1>
 
           <p className={styles.lead}>
-            Akademik Asistan, OBS ile LMS arasındaki operasyonel boşluğu
-            kapatır. QR yoklama, ödev, doküman, duyuru, yemekhane ve bildirimi
-            web ve mobilde tek çatı altında toplar.
+            OBS ve LMS birbirinden ayrı çalışır; yoklama, ödev, duyuru gibi
+            günlük işler ise farklı kanallara dağılır. Akademik Asistan bunları
+            QR yoklama, doküman, yemekhane ve bildirimle birlikte web ve mobilde
+            tek yerde toplar.
           </p>
 
           <div className={styles.actions}>

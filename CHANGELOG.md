@@ -25,3 +25,4 @@ Biçim [Keep a Changelog](https://keepachangelog.com/tr/1.1.0/) temel alınarak 
 - Barındırma GitHub Pages'ten **Cloudflare Pages**'e taşındı; dağıtım Cloudflare'in Git entegrasyonuyla `main`'e push'ta otomatik yapılır (ayrı GitHub Actions deploy iş akışı kaldırıldı). `robots.txt` ve site haritası `akademikasistan.com` apex alan adını gösterir.
 - Hero'daki ikinci CTA, sayfa içi "Hızlı bakış" modalı yerine **canlı demoya bağlantı** verir.
 - Logo, gösterim boyutuna göre ölçeklenmiş **480px WebP** olarak servis edilir (284KB PNG → 12KB).
+- Landing metni sadeleştirildi: "OBS ile LMS arasındaki operasyonel boşluk" jargonu, "OBS ve LMS dışında kalan günlük işler" gibi daha açık ifadelerle değiştirildi (Hero, Sorun bölümü, SSS, meta açıklamaları).
