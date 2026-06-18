@@ -1,25 +1,29 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
 }
 
-.mark {
+.surface {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  color: var(--text);
+  padding: 0.18rem 0.34rem;
+  color-scheme: light;
+  background: #fff;
+  border: 1px solid hsl(222 47% 11% / 0.08);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 2px hsl(222 47% 11% / 0.08);
 }
 
-.book {
-  fill: var(--accent);
-}
+.image {
+  width: auto;
+  height: 2.46rem;
+  max-width: 8.75rem;
+  object-fit: contain;
 
-.word {
-  font-size: 1.06rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-
-.accent {
-  color: var(--accent);
+  @media (min-width: 641px) {
+    height: 2.82rem;
+    max-width: 10rem;
+  }
 }
