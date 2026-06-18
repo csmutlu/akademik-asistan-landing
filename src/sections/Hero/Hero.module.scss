@@ -138,16 +138,3 @@
     0 0 0 1px var(--border-strong),
     var(--shadow-lg);
 }
-
-.demoList {
-  margin: 0.75rem 0 0;
-  padding-left: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  color: var(--text-muted);
-}
-
-.demoCta {
-  margin-top: 1.5rem;
-}
