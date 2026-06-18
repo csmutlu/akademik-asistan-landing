@@ -24,8 +24,8 @@ export function Problem() {
     <Section
       id="cozum"
       eyebrow="Sorun → Çözüm"
-      title="OBS ve LMS arasındaki operasyonel boşluk"
-      intro="Üniversiteler kayıt ve içerik süreçlerini OBS ile LMS üzerinden yönetir; ancak günlük operasyonel akışlar kopuk kanallara dağılır. Akademik Asistan tam da bu boşluğu kapatır."
+      title="İki ayrı sistem, dağılan günlük işler"
+      intro="Üniversiteler kaydı OBS'te, ders içeriğini LMS'te yönetir; ama yoklama, duyuru ve ödev gibi günlük işler e-posta, Excel ve sosyal medyaya dağılır. Akademik Asistan hepsini tek platformda toplar."
     >
       <div className={styles.grid}>
         <Card as="article" padding="lg" className={styles.col}>
