@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node ./scripts/clean-appledouble.mjs public src",
     "build": "tsc -b && vite build",
+    "postbuild": "node ./scripts/clean-appledouble.mjs dist",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
