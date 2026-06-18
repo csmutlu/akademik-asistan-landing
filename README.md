@@ -96,7 +96,7 @@ Lighthouse masaüstü ölçümünde dört kategoride de 100. Ürün ekran görü
 
 ## Dağıtım
 
-- **Cloudflare Pages:** proje adı `akademik-asistan`; build komutu `npm ci && npm run build`, output dizini `dist`.
+- **Cloudflare Pages (otomatik):** depo Cloudflare Pages'e bağlıdır; `main`'e her push'ta proje (`akademik-asistan`) `npm ci && npm run build` ile derlenip `dist` yayımlanır. Ayrı bir GitHub Actions deploy iş akışı yoktur.
 - **Direct upload:** `npm run build` sonrası `npx wrangler pages deploy dist --project-name akademik-asistan` komutu production deploy oluşturur.
 - **Özel alan adları:** Cloudflare Pages projesindeki **Custom domains** bölümüne `akademikasistan.com` ve `tanitim.akademikasistan.com` eklenmelidir. `akademikasistan.com` başka bir Pages projesine bağlıysa önce oradan kaldırılmalıdır.
 - **Static config:** `public/_headers` güvenlik/cache header'larını, `public/_redirects` ise SPA fallback kuralını üretim build'ine taşır.
