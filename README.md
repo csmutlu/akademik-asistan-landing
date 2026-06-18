@@ -4,7 +4,7 @@
 
 **Akademik Asistan**, üniversitelere SaaS modeliyle sunulan **çok kiracılı (multi-tenant) kurumsal akademik yönetim platformudur.** Bu repo, ürünün tek sayfalık **tanıtım (landing) sayfasını** ve sayfada kullanılan **sıfırdan yazılmış UI bileşen kütüphanesini** içerir.
 
-Sayfa; OBS ile LMS arasındaki operasyonel boşluğu (QR yoklama, ödev, doküman, duyuru, yemekhane, bildirim) tek platformda kapatma değer önermesini kurumsal karar vericilere anlatır.
+Sayfa, üniversitelerde OBS ve LMS dışında kalan günlük işleri (QR yoklama, ödev, doküman, duyuru, yemekhane, bildirim) tek platformda toplama fikrini kurumsal karar vericilere anlatır.
 
 - **Canlı demo:** https://akademikasistan.com/ veya https://tanitim.akademikasistan.com/
 - **Stack:** Vite + React + TypeScript + SCSS — harici UI kütüphanesi yok.

@@ -23,13 +23,13 @@ export const features: Feature[] = [
     icon: 'qr',
     title: 'QR yoklama ve ders akışı',
     description:
-      'QR ile saniyeler içinde yoklama; ödev, doküman ve duyuru tek operasyonel akışta toplanır.',
+      'QR ile saniyeler içinde yoklama; ödev, doküman ve duyuru tek akışta toplanır.',
   },
   {
     icon: 'link',
-    title: 'OBS & LMS boşluğunu kapatır',
+    title: 'OBS ve LMS dışında kalanı toplar',
     description:
-      'Mevcut öğrenci bilgi sistemi ile öğrenme yönetim sistemi arasındaki kopukluğu tek platformda giderir.',
+      'Öğrenci bilgi sistemi ve öğrenme yönetim sistemi dışında kalan günlük işleri tek platformda toplar; mevcut sistemlerinizle birlikte çalışır.',
   },
   {
     icon: 'bell',
@@ -165,7 +165,7 @@ export const faqs: Faq[] = [
     id: 'obs-lms',
     question: 'Mevcut OBS ve LMS sistemlerimizle entegre olur mu?',
     answer:
-      'Evet. Akademik Asistan, OBS ve LMS arasındaki operasyonel boşluğu kapatacak şekilde tasarlandı; yoklama, ödev, doküman, duyuru ve bildirim akışlarını tek platformda toplar ve mevcut sistemlerinizle birlikte çalışır.',
+      'Evet. Akademik Asistan OBS ve LMS sistemlerinin yerini almaz; bu iki sistemin dışında kalan günlük işleri — yoklama, ödev, doküman, duyuru, bildirim — tek platformda toplar ve mevcut sistemlerinizle birlikte çalışır.',
   },
   {
     id: 'marka',
