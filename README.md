@@ -6,7 +6,7 @@
 
 Sayfa; OBS ile LMS arasındaki operasyonel boşluğu (QR yoklama, ödev, doküman, duyuru, yemekhane, bildirim) tek platformda kapatma değer önermesini kurumsal karar vericilere anlatır.
 
-- **Canlı demo:** https://csmutlu.github.io/akademik-asistan-landing/ _(özel alan adı `tanitim.akademikasistan.com` DNS yönlendirmesiyle etkinleştirilebilir — bkz. Dağıtım)_
+- **Canlı demo:** https://akademikasistan.com/ veya https://tanitim.akademikasistan.com/
 - **Stack:** Vite + React + TypeScript + SCSS — harici UI kütüphanesi yok.
 
 ## Ekran görüntüleri
@@ -28,7 +28,7 @@ Sayfa; OBS ile LMS arasındaki operasyonel boşluğu (QR yoklama, ödev, doküma
 - **Tema:** CSS değişkenleriyle açık/koyu; başlangıç değeri sistem tercihi veya kalıcı seçim, FOUC önleyici boyama-öncesi script.
 - **Duyarlı:** mobil öncelikli; üç kırılım (≤640 · 641–1024 · ≥1025).
 - **Erişilebilirlik:** semantik HTML, atlama bağlantısı, `label-for`, aria nitelikleri, klavye gezinmesi (modal odak tuzağı, accordion ok tuşları), görünür odak halkaları, `prefers-reduced-motion`.
-- **Performans:** ürün önizlemesi CSS ile çizildi (görsel yükü yok), sistem font yığını, yalın JS/CSS.
+- **Performans:** ürün ekranları ve logo optimize WebP (boyutlandırılmış, uzun-önbellekli), sistem font yığını, yalın JS/CSS.
 - **Lighthouse (masaüstü): 100 / 100 / 100 / 100** — bkz. `docs/lighthouse.png`.
 
 ## Kurulum
@@ -92,12 +92,14 @@ Kısa özet:
 
 ## Performans
 
-Lighthouse masaüstü ölçümünde dört kategoride de 100. Ürün görseli yerine CSS ile çizilen önizleme, sistem font yığını ve yalın paket sayesinde görsel/font ağ yükü minimumdur (`docs/lighthouse.png`).
+Lighthouse masaüstü ölçümünde dört kategoride de 100. Ürün ekran görüntüleri ve logo optimize WebP olarak (gösterim boyutuna göre ölçeklenmiş, `immutable` önbellekli) servis edilir; sistem font yığını ve yalın paket sayesinde görsel/font ağ yükü düşük tutulur (`docs/lighthouse.png`).
 
 ## Dağıtım
 
-- **GitHub Pages:** `main`'e her push'ta `.github/workflows/deploy.yml` derleyip yayımlar.
-- **Özel alan adı (opsiyonel):** `tanitim.akademikasistan.com` için (1) `public/CNAME` dosyasına alan adını yazın, (2) alan adı sağlayıcısında bir **CNAME kaydı** ekleyin: `tanitim` → `csmutlu.github.io`. Repo Ayarlar → Pages'te kaynak **GitHub Actions** olmalıdır.
+- **Cloudflare Pages (otomatik):** depo Cloudflare Pages'e bağlıdır; `main`'e her push'ta proje (`akademik-asistan`) `npm ci && npm run build` ile derlenip `dist` yayımlanır. Ayrı bir GitHub Actions deploy iş akışı yoktur.
+- **Direct upload:** `npm run build` sonrası `npx wrangler pages deploy dist --project-name akademik-asistan` komutu production deploy oluşturur.
+- **Özel alan adları:** Cloudflare Pages projesindeki **Custom domains** bölümüne `akademikasistan.com` ve `tanitim.akademikasistan.com` eklenmelidir. `akademikasistan.com` başka bir Pages projesine bağlıysa önce oradan kaldırılmalıdır.
+- **Static config:** `public/_headers` güvenlik/cache header'larını, `public/_redirects` ise SPA fallback kuralını üretim build'ine taşır.
 - **Alternatif:** depo Vercel veya Netlify'a bağlanabilir (`vercel.json` / `netlify.toml` hazır).
 
 ## Katkı / dal akışı
